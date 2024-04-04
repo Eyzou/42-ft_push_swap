@@ -8,9 +8,10 @@ LIB_FLAGS = -Llibft -lft
 INCLUDE = -I ./includes -I ./libft -I 
 
 SRCS = srcs/push_swap.c\
-		srcs/arguments.c\
+		srcs/args_process.c\
 		srcs/error.c \
 		srcs/utils.c \
+		srcs/print.c \
 
 OBJ = $(SRCS:%.c=%.o)
 

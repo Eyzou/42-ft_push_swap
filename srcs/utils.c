@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:35:59 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/03 17:21:38 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/04 14:12:58 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ t_stack	*ft_lst_last(t_stack *lst)
 }
 
 //add a node at the end of the list
-void	ft_add_back(t_stack **stack, t_stack *stack_new)
+void	add_last_node(t_stack **stack, t_stack *stack_new)
 {
 	if(!stack)
 		return;
 	if(!*stack)
-		return;
+		*stack = stack_new;
 	else
 		(ft_lst_last(*stack)->next = stack_new);
 }
