@@ -8,6 +8,7 @@ LIB_FLAGS = -Llibft -lft
 INCLUDE = -I ./includes -I ./libft -I 
 
 SRCS = srcs/push_swap.c\
+		srcs/args_checks.c\
 		srcs/args_process.c\
 		srcs/error.c \
 		srcs/utils.c \

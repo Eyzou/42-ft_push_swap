@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 13:25:18 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 14:27:05 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/04 16:26:35 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 void	print_stack_a(t_stack *a)
 {
 	t_stack *tmp;
-	int i;
 	tmp = a;
-	while(tmp->next != NULL)
+	ft_printf("The stack_a is:\n");
+	while(tmp != NULL)
 	{
 		ft_printf("%i\n",tmp->nbr);
 		tmp = tmp->next;
-		i++;
 	}
 	free(tmp);
 }

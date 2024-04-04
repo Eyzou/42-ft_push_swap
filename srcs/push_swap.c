@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:10:46 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 14:19:08 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/04 16:42:22 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@ int main(int argc, char **argv)
 
 	if(argc < 2)
 		ft_error("Error\nThere is not enough argument\n");
+	check_errors(argv,1,0);
 	a = process_arg(argc,argv);
-	if(!a || check_dup(a) == 1)
+	print_stack_a(a);
+	if(!a || check_dup(a))
 	{
-		ft_error("Error\nThe arguments are invalid");
-		free(a);
+		ft_error("Error\nThe arguments are invalid\n");
+		free(a); /*free la liste entiere a changer avec la formule*/
 	}
-	//if(!ft_sorted(a))
+	if(!check_if_sorted(a))
+		ft_printf("tu dois trier ta liste boloss \n");
+	return(0);
 }
-/*
-
-verifier les args
-parser les chiffre les mettres dans une liste avec ft_split - parser les chiffre separe par les espaces.
-
-*/

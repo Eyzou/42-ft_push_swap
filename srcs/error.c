@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:32:19 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/03 17:20:18 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/04 16:40:50 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_error(char *str)
 }
 void free_str(char **lst)
 {
-	char *str;
 	int i;
 
 	i = 0;
@@ -29,8 +28,7 @@ void free_str(char **lst)
 		return ;
 	while(lst[i])
 	{
-		str = lst[i];
+		free(lst[i]);
 		i++;
-		free(str);
 	}
 }

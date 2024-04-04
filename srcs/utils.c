@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:35:59 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 14:12:58 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/04 16:36:09 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,3 @@ void	add_last_node(t_stack **stack, t_stack *stack_new)
 		(ft_lst_last(*stack)->next = stack_new);
 }
 
-int	check_dup(t_stack *a)
-{
-	t_stack *tmp;
-
-	while (a)
-	{
-		tmp = a->next;
-		while(tmp)
-		{
-			if(a->nbr == tmp->nbr)
-				return(1);
-			tmp = tmp->next;
-		}
-		a = a->next;
-	}
-	return(0);
-}
