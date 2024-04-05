@@ -30,7 +30,6 @@ int main(int argc, char **argv)
 		ft_printf("tu dois trier ta liste boloss \n");
 		ft_sort(&a);
 	}
-	print_stack_a(a);
-
+	print_stack(a);
 	return(0);
 }

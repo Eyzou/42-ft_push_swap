@@ -51,9 +51,11 @@ int ft_find_place_a(t_stack *a, int nbr_push);
 int ft_find_place_b(t_stack *b, int nbr_push);
 
 // operations
-void ft_sa(t_stack **a);
-void ft_pa(t_stack **a, t_stack **b);
-void ft_pb(t_stack **a, t_stack **b);
+void ft_sa(t_stack **a, int print);
+void ft_pa(t_stack **a, t_stack **b, int print);
+void ft_pb(t_stack **a, t_stack **b, int print);
+void ft_rr(t_stack **a, t_stack **b, int print);
+
 
 int case_rarb(t_stack *a, t_stack *b, int nbr);
 int case_rrarrb(t_stack *a, t_stack *b, int nbr);
@@ -70,9 +72,10 @@ void ft_sort(t_stack **a);
 t_stack *ft_sort_b(t_stack **a);
 int how_to_rotate_btoa(t_stack *a, t_stack *b);
 int how_to_rotate_atob(t_stack *a, t_stack *b);
+int ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
 
 // error message and free
 void ft_error(char *str);
-void free_str(t_stack **lst);
+void free_str(char **lst);
 
 #endif

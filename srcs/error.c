@@ -17,7 +17,7 @@ void	ft_error(char *str)
 	ft_printf("%s", str);
 	exit(1);
 }
-void free_str(t_stack **lst)
+void free_str(char **lst)
 {
 	int i;
 

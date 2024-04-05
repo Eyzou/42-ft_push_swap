@@ -10,52 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+ #include "../includes/push_swap.h"
 
-void ft_sort_b_until_3 (t_stack **a, t_stack **b)
-{
-    int i;
-    t_stack *tmp;
+// void ft_sort_b_until_3 (t_stack **a, t_stack **b)
+// {
+//     int i;
+//     t_stack *tmp;
 
-    while(ft_lst_size(*a) > 3 && !check_if_sorted(a))
-    {
-        tmp = *a;
-        i = how_to_rotate_atob(*a,*b);
-        while(i >= 0)
-        {
-            if(i == case_rarb(*a,*b,tmp->nbr))
-                i = ft_apply_rarb(a,b,tmp->nbr, 'a');
-        }
-    }
-}
+//     while(ft_lst_size(*a) > 3 && !check_if_sorted(a))
+//     {
+//         tmp = *a;
+//         i = how_to_rotate_atob(*a,*b);
+//         while(i >= 0)
+//         {
+//             if(i == case_rarb(*a,*b,tmp->nbr))
+//                 i = ft_apply_rarb(a,b,tmp->nbr, 'a');
+//             if(i == case_rrarrb(*a,*b,tmp->nbr))
+//                 i = ft_apply_rrarrb(a,b,tmp->nbr, 'a');
+//             if(i == case_rarrb(*a,*b,tmp->nbr))
+//                 i = ft_apply_rarrb(a,b,tmp->nbr, 'a');
+//             if(i == case_rrarb(*a,*b,tmp->nbr))
+//                 i = ft_apply_rrarb(a,b,tmp->nbr, 'a');
+//         }
+//     }
+// }
 
 
 t_stack *ft_sort_b(t_stack **a)
 {
     t_stack *b;
 
-    b = NULL;
+    // b = NULL;
     if(ft_lst_size(*a) > 3 && !check_if_sorted(*a))
-        ft_pb(a,&b);
+        ft_pb(a,&b,0);
+    print_stack(b);
     if(ft_lst_size(*a) > 3 && !check_if_sorted(*a))
-        ft_pb(a,&b);
+        ft_pb(a,&b,0);
     // if(ft_lst_size(*a) > 3 && !check_if_sorted(*a))
     //     ft_sort_b_until_3(a,&b);
-    print_stack(b);
     return(b);
 }
 
 void ft_sort(t_stack **a)
 {
     t_stack *b;
-   // int     i;
+    // int     i;
 
-     b = NULL;
+    b = NULL;
     if(ft_lst_size(*a) == 2)
-        ft_sa(a);
+        ft_sa(a,0);
     else
     {
         ft_printf("il faut mieux trier la liste\n");
         b = ft_sort_b(a);
     }
+    print_stack(b);
 }
