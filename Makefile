@@ -13,6 +13,8 @@ SRCS = srcs/push_swap.c\
 		srcs/error.c \
 		srcs/utils.c \
 		srcs/print.c \
+		srcs/operations.c \
+		srcs/sort.c \
 
 OBJ = $(SRCS:%.c=%.o)
 

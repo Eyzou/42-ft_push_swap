@@ -20,13 +20,17 @@ int main(int argc, char **argv)
 		ft_error("Error\nThere is not enough argument\n");
 	check_errors(argv,1,0);
 	a = process_arg(argc,argv);
-	print_stack_a(a);
 	if(!a || check_dup(a))
 	{
 		ft_error("Error\nThe arguments are invalid\n");
 		free(a); /*free la liste entiere a changer avec la formule*/
 	}
 	if(!check_if_sorted(a))
+	{
 		ft_printf("tu dois trier ta liste boloss \n");
+		ft_sort(&a);
+	}
+	print_stack_a(a);
+
 	return(0);
 }
