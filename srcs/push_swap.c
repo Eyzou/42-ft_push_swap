@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:10:46 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 16:42:22 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/08 17:47:55 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ int main(int argc, char **argv)
 	if(!a || check_dup(a))
 	{
 		ft_error("Error\nThe arguments are invalid\n");
-		free(a); /*free la liste entiere a changer avec la formule*/
+		free_stack(&a); /*free la liste entiere a changer avec la formule*/
 	}
 	if(!check_if_sorted(a))
 	{
 		ft_printf("tu dois trier ta liste boloss \n");
 		ft_sort(&a);
 	}
+	free_stack(&a);
 	print_stack(a);
 	return(0);
 }

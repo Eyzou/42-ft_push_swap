@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:32:19 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 16:40:50 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/08 17:47:19 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,20 @@ void free_str(char **lst)
 	{
 		free(lst[i]);
 		i++;
+	}
+}
+
+void free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+
+	if(!stack)
+		return ;
+	while (*stack)
+	{
+		tmp =(*stack)->next;
+		(*stack)->nbr = 0;
+		free(*stack);
+		*stack = tmp;
 	}
 }

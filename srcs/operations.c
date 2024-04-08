@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 09:02:42 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/05 09:02:42 by marvin           ###   ########.fr       */
+/*   Updated: 2024/04/08 17:51:34 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,40 @@ void    ft_sa(t_stack **a, int print)
      if(print ==0)
         ft_printf("sa \n");
 }
+
+void    ft_sb(t_stack **b, int print)
+{
+    t_stack *tmp;
+
+    if(*b == NULL)
+        return ;
+    if((*b)->next == NULL)
+        return;
+    tmp = *b;
+    *b = (*b)->next;
+    tmp->next = (*b)->next;
+    (*b)->next = tmp;
+     if(print ==0)
+        ft_printf("sb \n");
+}
+void    ft_ss(t_stack **a,t_stack **b, int print)
+{
+    t_stack *tmp;
+
+    if(*b == NULL || *a == NULL || (*b)->next == NULL || (*a)->next == NULL)
+		return ;
+	tmp = *a;
+    *a = (*a)->next;
+    tmp->next = (*a)->next;
+    (*a)->next = tmp;
+    tmp = *b;
+    *b = (*b)->next;
+    tmp->next = (*b)->next;
+    (*b)->next = tmp;
+     if(print ==0)
+        ft_printf("ss \n");
+}
+
 
 void    ft_pa(t_stack **a, t_stack **b, int print)
 {
