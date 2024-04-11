@@ -6,7 +6,7 @@
 /*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:23:06 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:39:20 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/11 18:06:22 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,19 @@ int	check_error(char **argv, int i, int j)
 		i++;
 	}
 	return (0);
+}
+
+int	ft_checksorted(t_stack *stack_a)
+{
+	int	i;
+
+	i = stack_a->nbr;
+	while (stack_a)
+	{
+		if (i > stack_a->nbr)
+			return (0);
+		i = stack_a->nbr;
+		stack_a = stack_a->next;
+	}
+	return (1);
 }

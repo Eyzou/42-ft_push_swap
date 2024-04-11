@@ -6,7 +6,7 @@
 /*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:11:58 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/11 18:00:19 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/11 18:07:47 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 	struct s_stack	*bottom;
 }					t_stack;
 
-void		list_args(char **argv, t_stack **stack_a);
+
 void		ft_add_back(t_stack **stack, t_stack *stack_new);
 t_stack		*ft_stack_new(int content);
 int			check_args(char **argv);
@@ -40,7 +40,7 @@ int			ft_isalpha(int c);
 int			sign(int c);
 int			digit(int c);
 int			space(int c);
-void		ft_error(void);
+void	ft_error(char *str);
 void		ft_free(t_stack **lst);
 t_stack		*ft_lstlast(t_stack *lst);
 
@@ -65,8 +65,7 @@ void		ft_sort(t_stack **stack_a);
 int			ft_checksorted(t_stack *stack_a);
 void		ft_sort_big(t_stack **stack_a);
 void		ft_sort_three(t_stack **stack_a);
-t_stack		*ft_parse(int argc, char **argv);
-t_stack		*ft_parse_args_quoted(char **argv);
+
 void		ft_freestr(char **lst);
 int			ft_case_rarb_a(t_stack *a, t_stack *b, int c);
 int			ft_case_rrarrb_a(t_stack *a, t_stack *b, int c);

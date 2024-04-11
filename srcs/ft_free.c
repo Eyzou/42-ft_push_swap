@@ -6,7 +6,7 @@
 /*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:20:05 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:42:20 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/11 18:10:40 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	ft_freestr(char **lst)
 	*lst = NULL;
 }
 
-void	ft_error(void)
+void	ft_error(char *str)
 {	
-	write (2, "Error\n", 6);
+	ft_printf("%s",str);
 	exit(1);
 }

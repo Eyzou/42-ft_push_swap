@@ -12,14 +12,12 @@ SRCS = srcs/push_swap.c\
 		srcs/args_process.c\
 		srcs/utils.c \
 		srcs/ft_free.c \
-		srcs/ft_check_sorted.c \
 		srcs/ft_check_utils.c \
 		srcs/ft_add_back.c \
 		srcs/operations.c \
 		srcs/operations_2.c \
 		srcs/operations_3.c \
 		srcs/sort.c \
-		srcs/sort_three.c \
 		srcs/rotate_type.c \
 		srcs/rotate_and_push.c \
 		srcs/find_place.c \

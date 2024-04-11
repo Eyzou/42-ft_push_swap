@@ -6,7 +6,7 @@
 /*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:13 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:32:00 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/11 18:10:41 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_stack	*ft_stack_new(int content)
 
 	new = malloc(sizeof (t_stack));
 	if (!new)
-		ft_error();
+		ft_error("Error\nMalloc error.\n");
 	new->nbr = content;
 	new->next = NULL;
 	return (new);
