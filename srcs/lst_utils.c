@@ -1,64 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 16:35:59 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/04 16:36:09 by ehamm            ###   ########.fr       */
+/*   Created: 2022/07/28 19:01:05 by yogun             #+#    #+#             */
+/*   Updated: 2024/04/11 16:32:07 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *store_int_to_list(int content)
+// This function returns the last element of the stack.
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	t_stack *new;
-
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		ft_error("Error\n");
-	new->nbr = content;
-	new->next = NULL;
-	return (new);
-}
-t_stack *ft_lst_last(t_stack *lst)
-{
-	while (lst && lst->next)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
 
-int ft_lst_size(t_stack *lst)
+// This function returns the size of the stack.
+int	ft_lstsize(t_stack *lst)
 {
-	int size;
+	size_t	i;
 
-	size = 0;
-	if (lst == NULL)
-		return (0);
+	i = 0;
 	while (lst)
 	{
-		size++;
 		lst = lst->next;
+		i++;
 	}
-	return (size);
+	return (i);
 }
 
-// add a node at the end of the list
-void add_last_node(t_stack **stack, t_stack *stack_new)
+// This function finds and returns the smallest number
+// in the given stack.
+int	ft_min(t_stack *a)
 {
-	if (!stack)
-		return;
-	if (!*stack)
-		*stack = stack_new;
-	else
-		(ft_lst_last(*stack)->next = stack_new);
-}
+	int		i;
 
-int ft_min(t_stack *a)
-{
-	int i;
 	i = a->nbr;
 	while (a)
 	{
@@ -69,9 +52,12 @@ int ft_min(t_stack *a)
 	return (i);
 }
 
-int ft_max(t_stack *a)
+// This function finds and returns the biggest number
+// in the given stack.
+int	ft_max(t_stack *a)
 {
-	int i;
+	int		i;
+
 	i = a->nbr;
 	while (a)
 	{

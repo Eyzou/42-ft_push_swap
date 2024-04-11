@@ -15,7 +15,13 @@ SRCS = srcs/push_swap.c\
 		srcs/print.c \
 		srcs/operations.c \
 		srcs/operations2.c \
+		srcs/operations3.c \
 		srcs/sort.c \
+		srcs/rotate.c \
+		srcs/rotate_and_push.c \
+		srcs/find_place.c \
+		srcs/solver_a.c \
+		srcs/solver_b.c \
 
 OBJ = $(SRCS:%.c=%.o)
 

@@ -5,87 +5,104 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 09:02:42 by marvin            #+#    #+#             */
-/*   Updated: 2024/04/08 17:51:34 by ehamm            ###   ########.fr       */
+/*   Created: 2022/07/26 20:56:53 by yogun             #+#    #+#             */
+/*   Updated: 2024/04/11 16:32:23 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    ft_sa(t_stack **a, int print)
+// ra (rotate a) : shift up all elements of stack a by 1. 
+// The first element becomes the last one.
+void	ft_ra(t_stack **a, int j)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if(*a == NULL)
-        return ;
-    if((*a)->next == NULL)
-        return;
-    tmp = *a;
-    *a = (*a)->next;
-    tmp->next = (*a)->next;
-    (*a)->next = tmp;
-     if(print ==0)
-        ft_printf("sa \n");
-}
-
-void    ft_sb(t_stack **b, int print)
-{
-    t_stack *tmp;
-
-    if(*b == NULL)
-        return ;
-    if((*b)->next == NULL)
-        return;
-    tmp = *b;
-    *b = (*b)->next;
-    tmp->next = (*b)->next;
-    (*b)->next = tmp;
-     if(print ==0)
-        ft_printf("sb \n");
-}
-void    ft_ss(t_stack **a,t_stack **b, int print)
-{
-    t_stack *tmp;
-
-    if(*b == NULL || *a == NULL || (*b)->next == NULL || (*a)->next == NULL)
+	if (!*a || !(*a)->next)
 		return ;
 	tmp = *a;
-    *a = (*a)->next;
-    tmp->next = (*a)->next;
-    (*a)->next = tmp;
-    tmp = *b;
-    *b = (*b)->next;
-    tmp->next = (*b)->next;
-    (*b)->next = tmp;
-     if(print ==0)
-        ft_printf("ss \n");
+	*a = ft_lstlast(*a);
+	(*a)->next = tmp;
+	*a = tmp->next;
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "ra\n", 3);
 }
 
-
-void    ft_pa(t_stack **a, t_stack **b, int print)
+// sa (swap a) : swap the first 2 elements at the top of stack a. 
+// Do nothing if there is only one or no elements).
+void	ft_sa(t_stack **a, int j)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if(*b == NULL)
-        return ;
-    tmp = *a;
-    *a = *b;
-    *b = (*b)->next;
-    (*a)->next = tmp;
-     if(print ==0)
-        ft_printf("pa \n");
+	if (!*a || !((*a)->next))
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+	if (j == 0)
+		write(1, "sa\n", 3);
 }
 
-void    ft_pb(t_stack **a, t_stack **b, int print)
+// pa (push a) : take the first element at the top of b and 
+// put it at the top of a. Do nothing if b is empty.
+void	ft_pa(t_stack **a, t_stack **b, int j)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if(*a == NULL)
-        return ;
-    tmp = *b;
-    *b = *a;
-    *a = (*a)->next;
-    (*a)->next = tmp;
-     if(print ==0)
-        ft_printf("pb \n");
+	if (!*b)
+		return ;
+	tmp = *a;
+	*a = *b;
+	*b = (*b)->next;
+	(*a)->next = tmp;
+	if (j == 0)
+		write(1, "pa\n", 3);
+}
+
+// rra (reverse rotate a) : shift down all elements of stack a by 1. 
+// The last element becomes the first one.
+void	ft_rra(t_stack **a, int j)
+{
+	t_stack	*tmp;
+	int		i;
+
+	if (!*a || !(*a)->next)
+		return ;
+	i = 0;
+	tmp = *a;
+	while ((*a)->next)
+	{
+		*a = (*a)->next;
+		i++;
+	}
+	(*a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rra\n", 4);
+}
+
+// ss : sa and sb at the same time.
+void	ft_ss(t_stack **a, t_stack **b, int j)
+{
+	t_stack	*tmp;
+
+	if (!*a || !((*a)->next) || !*b || !((*b)->next))
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = (*b)->next;
+	(*b)->next = tmp;
+	if (j == 0)
+		write(1, "ss\n", 3);
 }

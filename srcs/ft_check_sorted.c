@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 12:39:36 by yogun             #+#    #+#             */
-/*   Updated: 2024/04/11 16:33:19 by ehamm            ###   ########.fr       */
+/*   Created: 2024/04/11 16:33:47 by ehamm             #+#    #+#             */
+/*   Updated: 2024/04/11 16:34:09 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+// This function checks if the stack is sorted.
+int	ft_checksorted(t_stack *stack_a)
 {
-	t_stack	*a;
+	int	i;
 
-	a = ft_process(argc, argv);
-	if (!a || ft_checkdup(a))
+	i = stack_a->nbr;
+	while (stack_a)
 	{
-		ft_free(&a);
-		ft_error();
+		if (i > stack_a->nbr)
+			return (0);
+		i = stack_a->nbr;
+		stack_a = stack_a->next;
 	}
-	if (!ft_checksorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
+	return (1);
 }

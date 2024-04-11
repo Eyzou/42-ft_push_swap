@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 12:39:36 by yogun             #+#    #+#             */
-/*   Updated: 2024/04/11 16:33:19 by ehamm            ###   ########.fr       */
+/*   Created: 2024/04/11 16:33:33 by ehamm             #+#    #+#             */
+/*   Updated: 2024/04/11 16:34:02 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+// Function to add a new node to the stack from back side
+void	ft_add_back(t_stack **stack, t_stack *stack_new)
 {
-	t_stack	*a;
-
-	a = ft_process(argc, argv);
-	if (!a || ft_checkdup(a))
-	{
-		ft_free(&a);
-		ft_error();
-	}
-	if (!ft_checksorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
+	if (!stack)
+		return ;
+	if (!*stack)
+		*stack = stack_new;
+	else
+		(ft_lstlast(*stack))->next = stack_new;
 }
