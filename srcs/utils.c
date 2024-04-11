@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_utils.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 19:01:05 by yogun             #+#    #+#             */
-/*   Updated: 2024/04/11 16:32:07 by ehamm            ###   ########.fr       */
+/*   Created: 2024/04/11 17:19:13 by elo               #+#    #+#             */
+/*   Updated: 2024/04/11 17:32:00 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../includes/push_swap.h"
 
@@ -66,4 +67,16 @@ int	ft_max(t_stack *a)
 		a = a->next;
 	}
 	return (i);
+}
+
+t_stack	*ft_stack_new(int content)
+{
+	t_stack	*new;
+
+	new = malloc(sizeof (t_stack));
+	if (!new)
+		ft_error();
+	new->nbr = content;
+	new->next = NULL;
+	return (new);
 }

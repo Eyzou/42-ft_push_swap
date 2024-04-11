@@ -10,14 +10,17 @@ INCLUDE = -I ./includes -I ./libft -I
 SRCS = srcs/push_swap.c\
 		srcs/args_checks.c\
 		srcs/args_process.c\
-		srcs/error.c \
 		srcs/utils.c \
-		srcs/print.c \
+		srcs/ft_free.c \
+		srcs/ft_check_sorted.c \
+		srcs/ft_check_utils.c \
+		srcs/ft_add_back.c \
 		srcs/operations.c \
-		srcs/operations2.c \
-		srcs/operations3.c \
+		srcs/operations_2.c \
+		srcs/operations_3.c \
 		srcs/sort.c \
-		srcs/rotate.c \
+		srcs/sort_three.c \
+		srcs/rotate_type.c \
 		srcs/rotate_and_push.c \
 		srcs/find_place.c \
 		srcs/solver_a.c \

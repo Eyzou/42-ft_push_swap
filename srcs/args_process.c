@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.c                                        :+:      :+:    :+:   */
+/*   args_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:25 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/11 16:34:06 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/11 17:38:42 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,39 @@ t_stack	*ft_process(int argc, char **argv)
 		}
 	}
 	return (a);
+}
+
+t_stack	*ft_parse_args_quoted(char **argv)
+{
+	t_stack	*stack_a;
+	char	**tmp;
+
+	stack_a = NULL;
+	tmp = ft_split(argv[1], 32);
+	list_args(tmp, &stack_a);
+	ft_freestr(tmp);
+	free(tmp);
+	return (stack_a);
+}
+
+// This function does three things.
+// 1. It checks if the number of input is less than 2.
+// 2. It checks if the number of input is equal to 2.
+//    If it is, it means it is a quoted string.
+// 3. It checks if the number of input is greater than 2.
+//     If it is, it lists the arguements.
+t_stack	*ft_parse(int argc, char **argv)
+{
+	t_stack	*stack_a;
+
+	stack_a = NULL;
+	if (argc < 2)
+		ft_error();
+	else if (argc == 2)
+		stack_a = ft_parse_args_quoted(argv);
+	else
+	{
+		list_args(argv, &stack_a);
+	}
+	return (stack_a);
 }

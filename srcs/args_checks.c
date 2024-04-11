@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_args.c                                    :+:      :+:    :+:   */
+/*   args_checks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:37 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/11 16:34:04 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/11 17:44:07 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,43 @@ int	check_args(char **argv)
 {
 	alpha_check(argv);
 	if (!check_error(argv, 1, 0))
-		return (false);
-	return (true);
+		return (0);
+	return (1);
+}
+
+int	ft_checkdup(t_stack *a)
+{
+	t_stack	*tmp;
+
+	while (a)
+	{
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->nbr == tmp->nbr)
+				return (1);
+			tmp = tmp->next;
+		}
+		a = a->next;
+	}
+	return (0);
+}
+
+// While arguments are valid, we start to add them 
+// into stack here one by one with while loop.
+// Atoi takes the number and turn it into an integer 
+// value where we can make math operations.
+// With stack new we create a new node for the current 
+// argument without linking it to list.
+// We make linking stage in ft_add_back call.
+void	list_args(char **argv, t_stack **stack_a)
+{
+	long	i;
+
+	i = 1;
+	while (argv[i] != NULL)
+	{
+		ft_add_back(stack_a, ft_stack_new(ft_atoi(argv[i])));
+		i++;
+	}
 }
