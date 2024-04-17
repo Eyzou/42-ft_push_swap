@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:11:58 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/11 18:07:47 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:36:46 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,12 @@ int			check_args(char **argv);
 void		alpha_check(char **argv);
 int			check_error(char **argv, int i, int j);
 int			ft_checkdup(t_stack *a);
-int			ft_isalpha(int c);
 int			sign(int c);
 int			digit(int c);
 int			space(int c);
 void	ft_error(char *str);
 void		ft_free(t_stack **lst);
-t_stack		*ft_lstlast(t_stack *lst);
+t_stack		*ft_lst_last(t_stack *lst);
 
 void		ft_ra(t_stack **a, int j);
 void		ft_rb(t_stack **b, int j);
@@ -55,7 +54,7 @@ void		ft_rr(t_stack **a, t_stack **b, int j);
 void		ft_rrr_sub(t_stack **b, int j);
 void		ft_rrr(t_stack **a, t_stack **b, int j);
 
-int			ft_lstsize(t_stack *lst);
+int			ft_lst_size(t_stack *lst);
 int			ft_min(t_stack *a);
 int			ft_max(t_stack *a);
 int			ft_find_index(t_stack *a, int nbr);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations_3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:22:39 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:23:25 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:08:33 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_rb(t_stack **b, int j)
 	if (!*b || !(*b)->next)
 		return ;
 	tmp = *b;
-	*b = ft_lstlast(*b);
+	*b = ft_lst_last(*b);
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;

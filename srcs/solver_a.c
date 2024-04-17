@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solver_utils_ab.c                                  :+:      :+:    :+:   */
+/*   solver_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:18:51 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:23:51 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:10:42 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	ft_case_rrarrb(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_find_place_b(b, c))
-		i = ft_lstsize(b) - ft_find_place_b(b, c);
-	if ((i < (ft_lstsize(a) - ft_find_index(a, c))) && ft_find_index(a, c))
-		i = ft_lstsize(a) - ft_find_index(a, c);
+		i = ft_lst_size(b) - ft_find_place_b(b, c);
+	if ((i < (ft_lst_size(a) - ft_find_index(a, c))) && ft_find_index(a, c))
+		i = ft_lst_size(a) - ft_find_index(a, c);
 	return (i);
 }
 
@@ -52,7 +52,7 @@ int	ft_case_rrarb(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_find_index(a, c))
-		i = ft_lstsize(a) - ft_find_index(a, c);
+		i = ft_lst_size(a) - ft_find_index(a, c);
 	i = ft_find_place_b(b, c) + i;
 	return (i);
 }
@@ -65,7 +65,7 @@ int	ft_case_rarrb(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_find_place_b(b, c))
-		i = ft_lstsize(b) - ft_find_place_b(b, c);
+		i = ft_lst_size(b) - ft_find_place_b(b, c);
 	i = ft_find_index(a, c) + i;
 	return (i);
 }

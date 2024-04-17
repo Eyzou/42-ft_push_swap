@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:28 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 18:11:20 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:39:17 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/push_swap.h"
 
@@ -19,7 +18,7 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	int		i;
 	t_stack	*tmp;
 
-	while (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	while (ft_lst_size(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
 		tmp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
@@ -50,11 +49,11 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	if (ft_lst_size(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	if (ft_lst_size(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
+	if (ft_lst_size(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		ft_sort_b_till_3(stack_a, &stack_b);
 	if (!ft_checksorted(*stack_a))
 		ft_sort_three(stack_a);
@@ -103,14 +102,14 @@ void	ft_sort(t_stack **stack_a)
 	int		i;
 
 	stack_b = NULL;
-	if (ft_lstsize(*stack_a) == 2)
+	if (ft_lst_size(*stack_a) == 2)
 		ft_sa(stack_a, 0);
 	else
 	{
 		stack_b = ft_sort_b(stack_a);
 		stack_a = ft_sort_a(stack_a, &stack_b);
 		i = ft_find_index(*stack_a, ft_min(*stack_a));
-		if (i < ft_lstsize(*stack_a) - i)
+		if (i < ft_lst_size(*stack_a) - i)
 		{
 			while ((*stack_a)->nbr != ft_min(*stack_a))
 				ft_ra(stack_a, 0);
@@ -120,11 +119,9 @@ void	ft_sort(t_stack **stack_a)
 			while ((*stack_a)->nbr != ft_min(*stack_a))
 				ft_rra(stack_a, 0);
 		}			
-	}	
+	}
 }
 
-// This function sort the stack if there are only 
-// three elements in the stack.
 void	ft_sort_three(t_stack **stack_a)
 {
 	if (ft_min(*stack_a) == (*stack_a)->nbr)

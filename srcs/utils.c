@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:13 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 18:10:41 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:39:29 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/push_swap.h"
 
 // This function returns the last element of the stack.
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*ft_lst_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -24,7 +23,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 }
 
 // This function returns the size of the stack.
-int	ft_lstsize(t_stack *lst)
+int	ft_lst_size(t_stack *lst)
 {
 	size_t	i;
 

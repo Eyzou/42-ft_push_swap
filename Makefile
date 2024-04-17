@@ -13,7 +13,6 @@ SRCS = srcs/push_swap.c\
 		srcs/utils.c \
 		srcs/ft_free.c \
 		srcs/ft_check_utils.c \
-		srcs/ft_add_back.c \
 		srcs/operations.c \
 		srcs/operations_2.c \
 		srcs/operations_3.c \

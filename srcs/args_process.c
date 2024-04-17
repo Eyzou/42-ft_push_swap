@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   args_process.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:25 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/11 18:10:42 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:12:17 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// This function works and sorts the stacks
-// in case of they are passed in between quotation
-// marks. In this scenario, this function takes the
-// string, and splits the numbers in order to create
-// seperated integer number.
 t_stack	*ft_sub_process(char **argv)
 {
 	t_stack	*a;
@@ -38,13 +33,6 @@ t_stack	*ft_sub_process(char **argv)
 	return (a);
 }
 
-// This function does three things.
-// 1. It checks if the number of input is less than 2.
-// 2. It checks if the number of input is equal to 2.
-//    If it is, it means it is a quoted string. Call
-//	  another function. <ft_sub_process>
-// 3. It checks if the number of input is greater than 2.
-//     If it is, it lists the arguements.
 t_stack	*ft_process(int argc, char **argv)
 {
 	t_stack	*a;

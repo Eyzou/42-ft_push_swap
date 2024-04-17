@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:23:06 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 18:06:22 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/17 11:15:33 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//chec if the chracter is negative
 int	sign(int c)
 {
 	if (c == '+' || c == '-')
@@ -20,15 +19,6 @@ int	sign(int c)
 	return (0);
 }
 
-//check if the character is digit
-int	digit(int c)
-{
-	if ((c >= 48) && (c <= 57))
-		return (1);
-	return (0);
-}
-
-//check if character is space character
 int	space(int c)
 {
 	if (c == ' ')
@@ -47,15 +37,15 @@ int	check_error(char **argv, int i, int j)
 			if (sign(argv[i][j]))
 			{
 				j++;
-				if (!digit(argv[i][j]))
+				if (!ft_isdigit(argv[i][j]))
 					return (1);
 			}
-			else if (digit(argv[i][j]))
+			else if (ft_isdigit(argv[i][j]))
 			{
 				j++;
 				if (argv[i][j] == '\0')
 					break ;
-				if (!digit(argv[i][j]) && !space(argv[i][j]))
+				if (!ft_isdigit(argv[i][j]) && !space(argv[i][j]))
 					return (1);
 			}
 			j++;
@@ -78,4 +68,14 @@ int	ft_checksorted(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
+}
+
+void	ft_add_back(t_stack **stack, t_stack *stack_new)
+{
+	if (!stack)
+		return ;
+	if (!*stack)
+		*stack = stack_new;
+	else
+		(ft_lst_last(*stack))->next = stack_new;
 }
