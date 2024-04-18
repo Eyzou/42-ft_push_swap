@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:11:58 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/18 10:00:52 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 11:40:36 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_stack
 {
@@ -28,7 +31,6 @@ typedef struct s_stack
 
 void				ft_add_back(t_stack **stack, t_stack *stack_new);
 t_stack				*ft_stack_new(int content);
-int					check_args(char **argv);
 int					alpha_check(char **argv);
 int					check_error(char **argv, int i, int j);
 int					ft_checkdup(t_stack *a);
@@ -38,6 +40,7 @@ int					space(int c);
 void				ft_error(char *str);
 void				ft_free(t_stack **lst);
 t_stack				*ft_lst_last(t_stack *lst);
+long long			ft_atoi2(const char *str);
 
 void				ft_ra(t_stack **a, int j);
 void				ft_rb(t_stack **b, int j);

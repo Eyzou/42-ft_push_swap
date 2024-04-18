@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:37 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/18 10:01:03 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 11:40:16 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,6 @@ int	alpha_check(char **argv)
 	return (0);
 }
 
-int	check_args(char **argv)
-{
-	alpha_check(argv);
-	if (!check_error(argv, 1, 0))
-		return (0);
-	return (1);
-}
-
 int	ft_checkdup(t_stack *a)
 {
 	t_stack	*tmp;
@@ -56,4 +48,29 @@ int	ft_checkdup(t_stack *a)
 		a = a->next;
 	}
 	return (0);
+}
+
+long long	ft_atoi2(const char *str)
+{
+	long long	res;
+	int			sign;
+
+	res = 0;
+	sign = 1;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - '0');
+		str++;
+	}
+	if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
+		ft_error("Error\nSome arguments are invalids.\n");
+	return (res * sign);
 }
