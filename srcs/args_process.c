@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:25 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/18 12:14:12 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 12:52:19 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_stack	*ft_sub_process(char **argv)
 {
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
+	t_stack		*a;
+	char		**tmp;
+	int			i;
+	long long	j;
 
 	a = NULL;
 	i = 0;
@@ -25,6 +25,12 @@ t_stack	*ft_sub_process(char **argv)
 	while (tmp[i])
 	{
 		j = ft_atoi2(tmp[i]);
+		if (j > INT_MAX || j < INT_MIN)
+		{
+			ft_freestr(tmp);
+			free(tmp);
+			ft_error("Error\nSome arguments are invalids.\n");
+		}
 		ft_add_back(&a, ft_stack_new(j));
 		i++;
 	}
@@ -35,9 +41,9 @@ t_stack	*ft_sub_process(char **argv)
 
 t_stack	*ft_process(int argc, char **argv)
 {
-	t_stack	*a;
-	int		i;
-	int		j;
+	t_stack		*a;
+	int			i;
+	long long	j;
 
 	i = 1;
 	a = NULL;
@@ -50,6 +56,8 @@ t_stack	*ft_process(int argc, char **argv)
 		while (i < argc)
 		{
 			j = ft_atoi2(argv[i]);
+			if (j > INT_MAX || j < INT_MIN)
+				ft_error("Error\nSome arguments are invalids.\n");
 			ft_add_back(&a, ft_stack_new(j));
 			i++;
 		}

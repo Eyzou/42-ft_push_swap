@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:37 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/18 11:40:16 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 12:34:43 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,5 @@ long long	ft_atoi2(const char *str)
 		res = res * 10 + (*str - '0');
 		str++;
 	}
-	if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
-		ft_error("Error\nSome arguments are invalids.\n");
 	return (res * sign);
 }
