@@ -6,13 +6,13 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:33:37 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/17 11:11:59 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 10:01:03 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	alpha_check(char **argv)
+int	alpha_check(char **argv)
 {
 	int	i;
 	int	j;
@@ -24,11 +24,12 @@ void	alpha_check(char **argv)
 		while ((argv[i][j]) != '\0')
 		{
 			if (ft_isalpha(argv[i][j]))
-				ft_error("Error\nArguments are not numbers.\n");
+				return (1);
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }
 
 int	check_args(char **argv)

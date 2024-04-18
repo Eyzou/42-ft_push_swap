@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:20:05 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 18:10:40 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/18 09:56:12 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-
-// This function frees the stack.
 void	ft_free(t_stack **lst)
 {
 	t_stack	*tmp;
@@ -45,7 +43,7 @@ void	ft_freestr(char **lst)
 }
 
 void	ft_error(char *str)
-{	
-	ft_printf("%s",str);
+{
+	ft_printf("%s", str);
 	exit(1);
 }

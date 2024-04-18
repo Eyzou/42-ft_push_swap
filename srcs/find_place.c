@@ -6,17 +6,15 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:17 by elo               #+#    #+#             */
-/*   Updated: 2024/04/17 11:13:01 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 09:35:21 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
-
 
 int	ft_find_index(t_stack *a, int nbr)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (a->nbr != nbr)
@@ -27,7 +25,6 @@ int	ft_find_index(t_stack *a, int nbr)
 	a->index = 0;
 	return (i);
 }
-
 
 int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 {

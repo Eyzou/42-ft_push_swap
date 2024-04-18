@@ -6,7 +6,7 @@
 /*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:23:06 by elo               #+#    #+#             */
-/*   Updated: 2024/04/17 11:15:33 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/18 09:33:58 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	space(int c)
 	return (0);
 }
 
-//function to check if given arguments is valid
 int	check_error(char **argv, int i, int j)
 {
 	while (argv[i])

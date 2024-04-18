@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate_type.c                                   :+:      :+:    :+:   */
+/*   rotate_type.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:32 by elo               #+#    #+#             */
-/*   Updated: 2024/04/11 17:23:38 by elo              ###   ########.fr       */
+/*   Updated: 2024/04/18 09:29:59 by ehamm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/push_swap.h"
 
-// This function calculate and decides which rotation
-// combination is best to use to sort the stack. Of
-// course, after rotation there is always one push
-// operation is left to do which i embeded to code.
-// Function is used during push from B to A.
 int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 {
 	int		i;
@@ -40,11 +34,6 @@ int	ft_rotate_type_ba(t_stack *a, t_stack *b)
 	return (i);
 }
 
-// This function calculate and decides which rotation
-// combination is best to use to sort the stack. Of
-// course, after rotation there is always one push
-// operation is left to do which i embeded to code.
-// Function is used during push from A to B.
 int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 {
 	int		i;
