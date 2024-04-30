@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   solver_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:18:51 by elo               #+#    #+#             */
-/*   Updated: 2024/04/18 09:29:52 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 21:55:20 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
+//nombre de rotations necessaire pour deplacer nb de a a b e
 int	ft_case_rarb(t_stack *a, t_stack *b, int c)
 {
 	int	i;

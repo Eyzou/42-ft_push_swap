@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_and_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:35 by elo               #+#    #+#             */
-/*   Updated: 2024/04/18 09:30:07 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 21:57:40 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
 	{
+		// tant que c n'est pas au sommet de a et qu'il y a une place pour c dans b
 		while ((*a)->nbr != c && ft_find_place_b(*b, c) > 0)
 			ft_rr(a, b, 0);
 		while ((*a)->nbr != c)

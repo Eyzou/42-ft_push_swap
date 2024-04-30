@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   solver_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:18:44 by elo               #+#    #+#             */
-/*   Updated: 2024/04/18 09:29:11 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 21:55:18 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// de la pile b a la pile a - retourne rotation necessaire pour deplacer nb de b a a en utilisant rarb
 int	ft_case_rarb_a(t_stack *a, t_stack *b, int c)
 {
 	int	i;

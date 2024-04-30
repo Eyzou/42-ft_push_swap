@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:28 by elo               #+#    #+#             */
-/*   Updated: 2024/04/18 09:29:09 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 21:58:40 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 	while (ft_lst_size(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
 		tmp = *stack_a;
+		//type de rotation a faire
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
@@ -92,6 +93,7 @@ void	ft_sort(t_stack **stack_a)
 		stack_b = ft_sort_b(stack_a);
 		stack_a = ft_sort_a(stack_a, &stack_b);
 		i = ft_find_index(*stack_a, ft_min(*stack_a));
+// si l'index du min est plus petit que la taille de la liste divisée par 2
 		if (i < ft_lst_size(*stack_a) - i)
 		{
 			while ((*stack_a)->nbr != ft_min(*stack_a))
