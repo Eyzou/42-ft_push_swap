@@ -3,6 +3,7 @@
 		"push_swap.h": "c",
 		"libft.h": "c",
 		"unistd.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"__config": "c"
 	}
 }

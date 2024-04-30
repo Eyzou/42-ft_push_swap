@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 15:11:58 by ehamm             #+#    #+#             */
-/*   Updated: 2024/04/18 11:40:36 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 20:19:01 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 	long			index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-	struct s_stack	*bottom;
 }					t_stack;
 
 void				ft_add_back(t_stack **stack, t_stack *stack_new);

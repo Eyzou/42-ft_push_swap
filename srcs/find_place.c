@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_place.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ehamm <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: elo <elo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:19:17 by elo               #+#    #+#             */
-/*   Updated: 2024/04/18 09:35:21 by ehamm            ###   ########.fr       */
+/*   Updated: 2024/04/30 20:36:45 by elo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_find_index(t_stack *a, int nbr)
 	a->index = 0;
 	return (i);
 }
+// déterminer la position 
+//où le nombre spécifique (nbr_push) devrait être inséré dans une pile (stack_b) pour maintenir l'ordre de la pile.
 
 int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 {
@@ -32,6 +34,7 @@ int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
+	// nbr a inséré est plus grand que premier nombnre de la pible et si il est plus petit que le dernier
 	if (nbr_push > stack_b->nbr && nbr_push < ft_lst_last(stack_b)->nbr)
 		i = 0;
 	else if (nbr_push > ft_max(stack_b) || nbr_push < ft_min(stack_b))
@@ -59,10 +62,11 @@ int	ft_find_place_a(t_stack *stack_a, int nbr_push)
 		i = 0;
 	else if (nbr_push > ft_max(stack_a) || nbr_push < ft_min(stack_a))
 		i = ft_find_index(stack_a, ft_min(stack_a));
+	// une pile trie en ordre croissant , il doit etre au debut de la pile.
 	else
 	{
 		tmp = stack_a->next;
-		while (stack_a->nbr > nbr_push || tmp->nbr < nbr_push)
+		while (stack_a->nbr > nbr_push || tmp->nbr < nbr_push) // compare le present et le next nbr de la stack au nbr push
 		{
 			stack_a = stack_a->next;
 			tmp = stack_a->next;
